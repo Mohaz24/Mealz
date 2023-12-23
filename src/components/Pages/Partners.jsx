@@ -3,18 +3,16 @@ import { useHistory } from "react-router-use-history";
 import { Link } from "react-router-dom";
 import westpac from "../../assets/westpac.jpg";
 import anz from "../../assets/anz.jpg";
-import Common from "../../assets/Common.jpg";
+import common from "../../assets/common.jpg";
 import Nab from "../../assets/Nab.webp";
 import Footer from "../Footer";
 
-
-
 function Partners() {
   const [app, setApp] = useState({});
-  
+
   const history = useHistory();
 
-  function submit(e){
+  function submit(e) {
     e.preventDefault();
 
     if (e.target.value === undefined) {
@@ -26,7 +24,7 @@ function Partners() {
 
     history.replace("/partners");
   }
-  
+
   return (
     <div className="custom-class-partners custom-scroll-y">
       <div className="flex flex-col items-center justify-center lg:flex-row lg:items-center lg:justify-center">
@@ -107,7 +105,7 @@ function Partners() {
           </div>
 
           <div className="h-full w-full lg:w-4/5 ">
-            <img src={Common} alt="common" className="w-full" />
+            <img src={common} alt="common" className="w-full" />
             <div className="shawdow-lg p-4 flex flex-col items-start gap-5">
               <h2 className="text-2xl titles tracking-normal font-bold not-italic leading-normal">
                 Common Wealth{" "}
@@ -170,7 +168,10 @@ function Partners() {
                   proud customers or just a fan of the food, we have something
                   for everyone.
                 </p>
-                <form id="form" className="flex flex-col items-center w-full mb-4 md:flex-row md:px-16">
+                <form
+                  id="form"
+                  className="flex flex-col items-center w-full mb-4 md:flex-row md:px-16"
+                >
                   <input
                     placeholder="Email"
                     onChange={(e) => setApp(e.target.value)}
@@ -180,7 +181,7 @@ function Partners() {
                     border-transparent rounded appearance-none md:mr-2 md:mb-0 
                      focus:outline-none focus:shadow-outline focus:text-black"
                   />
-                  <button 
+                  <button
                     onClick={(e) => submit(e)}
                     className="inline-flex items-center justify-center w-full h-12 px-6 font-semibold 
                     tracking-wide text-gray-200 transition duration-200 rounded shadow-md md:w-auto 
