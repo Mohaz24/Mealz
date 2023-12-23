@@ -1,0 +1,413 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Scroll bar styles */
+body::-webkit-scrollbar {
+  height: 16px;
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #d1003f;
+}
+
+body::-webkit-button:start:decrement,
+body::-webkit-button:end:increment {
+  display: none;
+}
+
+.custom-scroll-y::-webkit-scrollbar {
+  height: 16px;
+  width: 7px;
+}
+
+.custom-scroll-y::-webkit-scrollbar-thumb {
+  background-color: #d1003f;
+}
+.custom-scroll-y::-webkit-button:start:decrement,
+.custom-scroll-y::-webkit-button:end:decrement {
+  display: none;
+}
+
+:root {
+  --display: flex;
+  --justify-content: center;
+  --align-items: center;
+  --flex-direction: row;
+  --flex-direction-col: column;
+}
+
+.icon {
+  height: 50px;
+  width: 30px;
+  cursor: pointer;
+  margin-inline: 0;
+}
+
+/* Header custom utitity class */
+header,
+a {
+  display: var(--display);
+  align-items: var(--align-items);
+}
+
+/* Smaller screen sizes */
+@media (200px <= width <= 629px) {
+  .navbar-utility-class {
+    display: var(--display);
+    flex-direction: var(--flex-direction-col);
+    align-items: var(--align-items);
+    padding-inline: 1rem;
+    padding-block: 2.5rem;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    cursor: pointer;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition: 0.5s;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media (207px <= width <= 394px) {
+  header,
+  nav,
+  main,
+  footer {
+    width: 190vw;
+  }
+
+  /* Navigation background Image */
+  .nav-utility-class-bg {
+    position: relative;
+    background-image: url("./assets/Bg.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 190vw;
+    height: 100vh;
+  }
+  .nav-utility-class-ct {
+    width: 75%;
+  }
+}
+
+.nav-utility-class-bg {
+  background-image: url("./assets/Bg.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 70vh;
+}
+
+.nav-utility-class-ct-sm {
+  padding: 16px 28px;
+  background: #f8f8f8;
+}
+.nav-utility-class-ct-lg {
+  padding: 10px 60px;
+  width: 600px;
+  background: #f8f8f8;
+}
+
+.nav-utility-class-info-sm {
+  font-size: 30px;
+}
+
+.nav-utility-class-title {
+  color: #d1003f;
+  font-family: "Righteous", sans-serif;
+}
+
+.nav-utility-class-app {
+  display: var(--display);
+  flex-direction: var(--flex-direction);
+  align-items: var(--align-items);
+}
+
+/* Specific screens */
+@media (600px <= width <= 639px) {
+  .nav-utility-class-bg {
+    position: relative;
+  }
+
+  .navbar-utility-class-info {
+    line-height: 2;
+    font-size: 1.875rem;
+  }
+}
+
+/* Links */
+.active-links {
+  text-decoration: underline;
+  color: black;
+  font-weight: bold;
+}
+
+/* Main join Us custom utility class */
+.main-utitlity-class-ct {
+  display: var(--display);
+  padding: 1.25em 3.125em 1.25em 1.25em;
+  align-items: var(--align-items);
+  flex-direction: var(--flex-direction);
+  gap: 1.875em;
+  border-radius: 1rem;
+  background: #fff;
+  margin-bottom: 1.5rem;
+}
+
+/* Large screen sizes Main  */
+@media (min-width: 1000px) {
+  .main-utitlity-class-ct {
+    display: var(--display);
+    padding: 60px;
+    flex-direction: var(--flex-direction-col);
+    justify-content: var(--justify-content);
+    align-items: var(--justify-content);
+    gap: 16px;
+    border-radius: 16px;
+    align-self: stretch;
+  }
+}
+
+@media (min-width: 630px) {
+  .main-utility-class-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.main-utility-class-bg {
+  background-color: #d1003f;
+}
+.repeated-utility-ct,
+.stretch {
+  align-self: stretch;
+}
+
+.my-custom-class {
+  height: 70vh;
+}
+
+/* Footer custom utitity class */
+.duplicated-utility-class {
+  display: var(--display);
+  flex-direction: var(--flex-direction-col);
+  align-items: flex-start;
+  gap: 18px;
+  align-self: stretch;
+  padding: 50px 60px;
+}
+footer {
+  background: #d1003f;
+}
+.footer-title-custom-class {
+  color: #fff;
+  font-feature-settings: "liga" off;
+  font-family: "Roboto", sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.bg-dessert {
+  background-image: url("./assets/dessert.jpg");
+}
+
+.bg-breakfast {
+  background-image: url("./assets/breakfast.jpg");
+}
+
+.bg-beef {
+  background-image: url("./assets/beef.jpg");
+}
+
+.bg-pork {
+  background-image: url("./assets/pork.jpg");
+}
+.bg-seafood {
+  background-image: url("./assets/seafood.jpg");
+}
+
+.bg-vegan {
+  background-image: url("./assets/vegan.jpg");
+}
+
+.bg-vegetarian {
+  background-image: url("./assets/vege.jpg");
+}
+
+.bg-pasta {
+  background-image: url("./assets/Pasta.jpg");
+}
+
+.bg-dessert:hover,
+.bg-breakfast:hover,
+.bg-beef:hover,
+.bg-pork:hover,
+.bg-seafood:hover,
+.bg-vegan:hover,
+.bg-vegetarian:hover,
+.bg-pastaq:hover,
+.bg-starter-dish:hover,
+.bg-side-dish:hover,
+.bg-goat:hover,
+.bg-lamb:hover {
+  /* opacity: 0.3; */
+  filter: drop-shadow(1px);
+}
+
+.bg-dessert,
+.bg-breakfast,
+.bg-beef,
+.bg-pork,
+.bg-seafood,
+.bg-vegan,
+.bg-vegetarian,
+.bg-pasta {
+  height: 25vh;
+  background-position: center;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.6);
+  font-family: "Righteous", sans-serif;
+}
+
+.titles {
+  color: #d1003f;
+  font-family: "Righteous", sans-serif;
+}
+
+.custom-font {
+  font-family: "Righteous", sans-serif;
+}
+
+.custom-height {
+  height: 66vh;
+}
+
+.scroll {
+  overflow-y: scroll;
+}
+
+.custom-height-mobile {
+  height: 85vh;
+}
+
+.custom-heights-lg {
+  height: 70vh;
+}
+.custom-h{
+  height: 70vh;
+}
+
+.custom-heights {
+  height: 60vh;
+}
+
+@media (200px <= width <= 394px) {
+  .breakfast-component-utility-custom-class,
+  .custom-class-partners,
+  .custom-class-img,
+  .custom-class-cart,
+  .custom-class-job {
+    width: 200vw;
+  }
+  .menu-page-utiltiy-class {
+    width: 200vw;
+  }
+  .custom-height-mobile {
+    height: 70vh;
+  }
+}
+
+/* view more card heigth */
+@media (min-width: 1000px) {
+  .custom-height-lg {
+    height: 70vh;
+  }
+
+  .custom-card-lg {
+    height: 90vh;
+  }
+
+  .custom-height-lg-partners {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 1000px) {
+  .custom-height-lg {
+    height: 70vh;
+  }
+
+  .custom-card-lg {
+    height: 90vh;
+  }
+
+  .my-br {
+    display: block;
+  }
+}
+
+@media (min-width: 630px) {
+  .custom-height-mobile {
+    height: 70vh;
+  }
+}
+
+@media (min-width: 754px) {
+  .custom-height-md {
+    height: 60vh;
+  }
+}
+
+.custom-scroll-y {
+  overflow-y: scroll;
+}
+
+/* Parnters */
+.custom-bg-parnter {
+  background-image: url("https://www.thefulfillmentlab.com/hubfs/Temp%20Images/business%20partnership%20illustration.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  display: var(--display);
+  flex-direction: var(--flex-direction);
+  align-items: var(--align-items);
+  justify-content: var(--justify-content);
+}
+
+.bg-on {
+  background-color: #05ef82;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.custom-top {
+  bottom: 4rem;
+}
