@@ -1,5 +1,5 @@
 # Mealz
-An online food app!
+An online delivery food app!
 
 ### Live site: https://charming-treacle-7ccc86.netlify.app/
 
