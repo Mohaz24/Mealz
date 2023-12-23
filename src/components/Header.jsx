@@ -81,7 +81,7 @@ function Header() {
               className={({ isActive }) => (isActive ? "active-links" : "")}
               to="partners"
             >
-              Parnters
+              Partners
               <MdOutlineEmojiPeople className="ml-2" />
             </NavLink>
             <NavLink
