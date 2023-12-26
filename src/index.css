@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .custom-tags-classes{
+    @apply px-2 py-0 font-extralight text-yellow-200 
+    bg-red-700 rounded-xl mb-2;
+  }
+}
+
+
 *::before,
 ::after {
   box-sizing: border-box;
@@ -11,7 +19,6 @@ body {
   padding: 0;
   margin: 0;
   user-select: none;
-  cursor: pointer;
 }
 
 /* Scroll bar styles */

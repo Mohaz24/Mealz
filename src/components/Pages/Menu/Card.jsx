@@ -19,14 +19,14 @@ function Card(props) {
         className="fixed top-32 right-0 bottom-0  
         left-0 m-auto custom-height-mobile bg-white shadow-lg rounded-lg w-11/12 h-full
         sm:w-10/12 sm:top-48  md:left-16 custom-height-md  lg:w-10/12 custom-height-lg  lg:top-64
-        lg:m-auto  lg:pt-2 custom-scroll-y cursor-pointer"
+        lg:pt-2 custom-scroll-y"
       >
-        <section className="flex justify-between items-center p-5 ">
-          <div className="flex gap-2 items-center lg:text-2xl ">
+        <section className="flex justify-between items-center p-5">
+          <div className="flex gap-2 items-center  cursor-pointer lg:text-2xl">
             <IoCartSharp
               style={stylesCart}
               onClick={props.addToCart}
-              className={`w-5 h-5  sm:w-6  sm:h-6 lg:w-7 lg:h-7`}
+              className={`w-5 h-5 hover:text-[#05C56B]  sm:w-6  sm:h-6 lg:w-7 lg:h-7`}
             />
             <p className="hidden sm:flex">Add to the cart</p>
           </div>
@@ -35,7 +35,7 @@ function Card(props) {
           </h2>
           <AiOutlineClose
             className=" hover:text-red-600 w-5 h-5
-                            sm:w-6 sm:h-6 lg:w-7 lg:h-7 "
+                            sm:w-6 sm:h-6 lg:w-7 lg:h-7 cursor-pointer"
             onClick={props.toggle}
           />
         </section>
@@ -56,10 +56,10 @@ function Card(props) {
 
           <div>
             <Link
-              className="flex flex-col items-start gap-2"
+              className="flex flex-col items-start gap-2 cursor-pointer"
               to={props.strYoutube === "" ? "/NotFoundPage" : props.strYoutube}
             >
-              <FaYoutube className="text-red-600 w-16 h-16" />
+              <FaYoutube className="text-red-600 w-16 h-16 " />
               <p className="font-extralight sm:text-lg lg:text-xl">
                 {" "}
                 Youtube video{" "}
@@ -69,61 +69,26 @@ function Card(props) {
             {props.tagArr ? (
               <>
                 {props.tagArr && (
-                  <div
-                    className="px-2 py-0 font-extralight  w-30 text-yellow-200 
-                          bg-red-700 rounded-xl"
-                  >
-                    {props.tagArr[0]}
-                  </div>
+                  <div className="custom-tags-classes ">{props.tagArr[0]}</div>
                 )}
                 {props.tagArr && (
-                  <div
-                    className="px-2 py-0 font-extralight  w-30 text-yellow-200 
-                          bg-red-700 rounded-xl mt-2"
-                  >
-                    {props.tagArr[1]}
-                  </div>
+                  <div className="custom-tags-classes">{props.tagArr[1]}</div>
                 )}
                 {props.tagArr && (
-                  <div
-                    className="px-2 py-0 font-extralight  w-30 text-yellow-200 
-                          bg-red-700 rounded-xl mt-2"
-                  >
-                    {props.tagArr[2]}
-                  </div>
+                  <div className="custom-tags-classes">{props.tagArr[2]}</div>
                 )}
                 {props.tagArr && (
-                  <div
-                    className="px-2 py-0 font-extralight  w-30 text-yellow-200 
-                          bg-red-700 rounded-xl mt-2"
-                  >
-                    {props.tagArr[3]}
-                  </div>
+                  <div className="custom-tags-classes ">{props.tagArr[3]}</div>
                 )}
                 {props.tagArr && (
-                  <div
-                    className="px-2 py-0 font-extralight  w-30 text-yellow-200 
-                          bg-red-700 rounded-xl mt-2"
-                  >
-                    {props.tagArr[4]}
-                  </div>
+                  <div className=" custom-tags-classes">{props.tagArr[4]}</div>
                 )}
                 {props.tagArr && (
-                  <div
-                    className="px-2 py-0 font-extralight  w-30 text-yellow-200 
-                          bg-red-700 rounded-xl mt-2"
-                  >
-                    {props.tagArr[5]}
-                  </div>
+                  <div className="custom-tags-classes">{props.tagArr[5]}</div>
                 )}
               </>
             ) : (
-              <div
-                className="px-2 py-1 font-extralight  w-30 text-yellow-200 
-                            bg-red-700 rounded-xl"
-              >
-                No tags available
-              </div>
+              <div className="custom-tags-classes py-1">No tags available</div>
             )}
           </div>
 

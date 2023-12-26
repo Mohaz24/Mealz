@@ -103,7 +103,7 @@ function Cart() {
                   <MdDelete
                     onClick={() => removeItems(items.idMeal)}
                     disabled={isTrue === "removed" ? false : false}
-                    className="w-5 h-10 hover:text-red-500 lg:w-10 lg:h-7"
+                    className="w-5 h-10 hover:text-red-500 lg:w-10 lg:h-7 cursor-pointer"
                   />
                 </div>
               </div>
