@@ -1,18 +1,23 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { IoMdArrowBack } from "react-icons/io";
+import { getBreakfastData } from "../../api";
 import Card from "./Card";
 
+export function loader() {
+  return getBreakfastData();
+}
+
 function BreakFast() {
-  const [mealz, setMealz] = useState([]);
+  const mealz = useLoaderData();
   const [on, setOn] = useState(false);
   const [ingredients, setIngredients] = useState([]);
   const [storeToLocalStorage, setStoreToLocalStorage] = useState([]);
-  const [savedData, setSavedData] = useState([]);
+  const [addedToLocalStorage, setaddedToLocalStorage] = useState([]);
 
   const localData =
-    savedData &&
-    savedData.map((value) => {
+    addedToLocalStorage &&
+    addedToLocalStorage.map((value) => {
       if (value.isFilled) {
         return localStorage.setItem(`${value.idMeal}`, JSON.stringify(value));
       } else {
@@ -21,33 +26,17 @@ function BreakFast() {
     });
 
   useEffect(() => {
-    const getFood = async () => {
-      const response = await fetch(
-        "https://www.themealdb.com/api/json/v1/1/filter.php?c=Breakfast"
-      );
-      try {
-        const data = await response.json();
-        setMealz(data.meals);
-      } catch (err) {
-        setMealz(err);
-        console.log(err);
-      }
-    };
-    getFood();
-  }, []);
-
-  useEffect(() => {
     const hide = on ? "hidden" : "visible";
     const darktheme = on ? "#edf2f7" : "#FFF";
     document.body.style.overflow = `${hide}`;
     document.body.style.backgroundColor = `${darktheme}`;
-  }, [toggle]);
+  }, [toggleReadMoreCard]);
 
-  function toggle(id) {
+  function toggleReadMoreCard(id) {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((res) => res.json())
       .then((data) => {
-        const modified =
+        const modifyIngredients =
           data.meals &&
           data.meals.map((ingre) => {
             return {
@@ -55,14 +44,14 @@ function BreakFast() {
               isFilled: false,
             };
           });
-        setIngredients(modified);
-        setStoreToLocalStorage(modified);
+        setIngredients(modifyIngredients);
+        setStoreToLocalStorage(modifyIngredients);
       });
     setOn((prevOn) => !prevOn);
   }
 
   function addToCart(id) {
-    const modified = storeToLocalStorage.map((ingre) => {
+    const cartInfoToLocalStroage = storeToLocalStorage.map((ingre) => {
       return ingre.idMeal === id
         ? {
             ...ingre,
@@ -71,8 +60,8 @@ function BreakFast() {
           }
         : ingre;
     });
-    setStoreToLocalStorage(modified);
-    setSavedData(modified);
+    setStoreToLocalStorage(cartInfoToLocalStroage);
+    setaddedToLocalStorage(cartInfoToLocalStroage);
   }
 
   const menuList = mealz.map((meal) => {
@@ -95,7 +84,7 @@ function BreakFast() {
             {meal.strMeal}
           </h1>
           <button
-            onClick={() => toggle(meal.idMeal)}
+            onClick={() => toggleReadMoreCard(meal.idMeal)}
             className="bg-red-700 font-extraligth w-full p-2 text-yellow-200 
          sm:mt-5 lg:text-2xl myButton "
             disabled={on ? true : false}
@@ -140,7 +129,7 @@ function BreakFast() {
                     id={items.idMeal}
                     {...items}
                     tagArr={tags}
-                    toggle={toggle}
+                    toggle={toggleReadMoreCard}
                     addToCart={() => addToCart(items.idMeal)}
                     cart={storeToLocalStorage}
                   />

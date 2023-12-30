@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Card custom-classes */
 @layer components {
   .custom-tags-classes{
     @apply px-2 py-0 font-extralight text-yellow-200 
@@ -69,6 +71,7 @@ header,
 a {
   display: var(--display);
   align-items: var(--align-items);
+  justify-content: var(--justify-content);
 }
 
 /* Smaller screen sizes */
@@ -223,7 +226,7 @@ a {
   align-items: flex-start;
   gap: 18px;
   align-self: stretch;
-  padding: 50px 60px;
+  padding: 40px 50px;
 }
 footer {
   background: #d1003f;
