@@ -80,8 +80,8 @@ a {
     display: var(--display);
     flex-direction: var(--flex-direction-col);
     align-items: var(--align-items);
-    padding-inline: 1rem;
-    padding-block: 2.5rem;
+    gap: 0.25rem;
+   
     justify-content: space-between;
     font-size: 1.25rem;
     cursor: pointer;
@@ -96,7 +96,6 @@ a {
     background-color: #fff;
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
   }
 }
 

@@ -19,7 +19,7 @@ function Header() {
       >
         <img src={Mealz} alt="logo" className="sm:w-20 md:w-24 lg:w-24" />
         <nav
-          className="hidden sm:flex sm:gap-6 sm:text-lg md:gap-10 
+          className="hidden sm:flex gap-4 sm:gap-6 sm:text-lg md:gap-10 
         lg:gap-16 lg:text-xl"
         >
           <NavLink
