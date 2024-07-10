@@ -36,7 +36,7 @@ function Card(props) {
           <AiOutlineClose
             className=" hover:text-red-600 w-5 h-5
                             sm:w-6 sm:h-6 lg:w-7 lg:h-7 cursor-pointer"
-            onClick={props.toggle}
+            //onClick={props.toggle}
           />
         </section>
 

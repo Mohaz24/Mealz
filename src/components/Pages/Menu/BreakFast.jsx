@@ -25,12 +25,12 @@ function BreakFast() {
       }
     });
 
-  useEffect(() => {
-    const hide = on ? "hidden" : "visible";
-    const darktheme = on ? "#edf2f7" : "#FFF";
-    document.body.style.overflow = `${hide}`;
-    document.body.style.backgroundColor = `${darktheme}`;
-  }, [toggleReadMoreCard]);
+  // useEffect(() => {
+  //   const hide = on ? "hidden" : "visible";
+  //   const darktheme = on === "show" ?  "#edf2f7" : "#FFF";
+  //   document.body.style.overflow = `${hide}`;
+  //   document.body.style.backgroundColor = `${darktheme}`;
+  // }, [toggleReadMoreCard]);
 
   function toggleReadMoreCard(id) {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -47,7 +47,7 @@ function BreakFast() {
         setIngredients(modifyIngredients);
         setStoreToLocalStorage(modifyIngredients);
       });
-    setOn((prevOn) => !prevOn);
+    setOn(true);
   }
 
   function addToCart(id) {
@@ -116,7 +116,7 @@ function BreakFast() {
         {menuList}
       </div>
 
-      {on ? (
+      { on  ? (
         <div>
           {ingredients &&
             ingredients.map((items) => {
@@ -137,7 +137,7 @@ function BreakFast() {
               );
             })}
         </div>
-      ) : null}
+      ) : null }
     </div>
   );
 }
